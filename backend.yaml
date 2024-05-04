@@ -39,3 +39,8 @@
     ansible.builtin.command: npm install
     args:
       chdir: /app # npm install should be installed in /app dierectory
+
+  - name: copy backend service
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
